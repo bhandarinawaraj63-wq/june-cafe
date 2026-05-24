@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>June Cafe | Premium Nepal Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar" id="topbar">
+    <div class="container header-grid">
+      <a href="#home" class="brand">
+        <span class="brand-mark">J</span>
+        <div>
+          <p class="brand-title">June Cafe</p>
+          <small>Premium Nepal Cafe</small>
+        </div>
+      </a>
+      <button class="theme-switch" id="theme-toggle" aria-label="Toggle theme">☀️</button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+      <nav class="nav-menu" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#locations">Locations</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Sip premium moments</p>
+        <h1>June Cafe — A warm coffee sanctuary in Nepal</h1>
+        <p>Curated coffee blends, elegant food plates, and serene vibes across Kathmandu, Pokhara, Chitwan and Lalitpur.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#menu">Explore Menu</a>
+          <a class="btn btn-secondary" href="#contact">Book a table</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container section-grid">
+        <div class="section-text">
+          <span class="section-label">About Us</span>
+          <h2>Welcome to June Cafe</h2>
+          <p>June Cafe blends classic café culture with a premium Nepalese experience. From handcrafted espresso to gourmet plates made with local flavors, every visit is designed to feel rich and relaxing.</p>
+          <div class="feature-list">
+            <div><strong>Warm premium ambience</strong><span>Soft lights and handcrafted décor.</span></div>
+            <div><strong>Locally brewed coffee</strong><span>Fresh beans roasted for a smooth finish.</span></div>
+            <div><strong>Signature food menu</strong><span>Comfort meals with artisanal presentation.</span></div>
+          </div>
+        </div>
+        <div class="about-card">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Coffee and bakery" />
+          <div class="about-card-info">
+            <p class="eyebrow">Our philosophy</p>
+            <h3>Coffee, comfort, and heaven in every cup.</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-label">Menu</span>
+            <h2>Signature drinks & premium bites</h2>
+          </div>
+          <div class="menu-search-wrap">
+            <input id="menu-search" class="menu-search" type="search" placeholder="Search coffee and food..." aria-label="Search menu" />
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-title">
+            <span>Coffee Menu</span>
+            <p>Classic coffee crafted for rich flavor and silky crema.</p>
+          </div>
+          <div class="menu-grid">
+            <article class="menu-card" data-keywords="espresso espresso coffee" data-type="coffee">
+              <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" alt="Espresso" />
+              <div class="menu-card-content">
+                <h3>Espresso</h3>
+                <p>Deep, intense and perfectly pulled.</p>
+                <div class="menu-card-footer">
+                  <span>NPR 180</span>
+                  <button class="btn btn-tertiary add-cart">Add to cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card" data-keywords="cappuccino cappuccino coffee milk" data-type="coffee">
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Cappuccino" />
+              <div class="menu-card-content">
+                <h3>Cappuccino</h3>
+                <p>Creamy foam with balanced espresso warmth.</p>
+                <div class="menu-card-footer">
+                  <span>NPR 250</span>
+                  <button class="btn btn-tertiary add-cart">Add to cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card" data-keywords="latte latte coffee" data-type="coffee">
+              <img src="https://images.unsplash.com/photo-1510626176961-4b2ce7ee9a87?auto=format&fit=crop&w=800&q=80" alt="Latte" />
+              <div class="menu-card-content">
+                <h3>Latte</h3>
+                <p>Silky steamed milk layered over rich espresso.</p>
+                <div class="menu-card-footer">
+                  <span>NPR 280</span>
+                  <button class="btn btn-tertiary add-cart">Add to cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card" data-keywords="mocha mocha coffee chocolate" data-type="coffee">
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Mocha" />
+              <div class="menu-card-content">
+                <h3>Mocha</h3>
+                <p>Chocolate notes meet velvety espresso.</p>
+                <div class="menu-card-footer">
+                  <span>NPR 320</span>
+                  <button class="btn btn-tertiary add-cart">Add to cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card" data-keywords="americano americano coffee" data-type="coffee">
+              <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80" alt="Americano" />
+              <div class="menu-card-content">
+                <h3>Americano</h3>
+                <p>Smooth and bright, with crisp coffee clarity.</p>
+                <div class="menu-card-footer">
+                  <span>NPR 220</span>
+                  <button class="btn btn-tertiary add-cart">Add to cart</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-title">
+            <span>Food Menu</span>
+            <p>Delicious plates to pair with your favorite drink.</p>
+          </div>
+          <div class="food-grid">
+            <article class="food-card" data-keywords="chicken burger burger" data-type="food">
+              <img src="https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=800&q=80" alt="Chicken Burger" />
+              <div class="food-details">
+                <h3>Chicken Burger</h3>
+                <p>Juicy grilled chicken, crisp lettuce and signature sauce.</p>
+                <div class="food-meta">
+                  <span>NPR 350</span>
+                  <button class="btn btn-tertiary add-cart">Add to cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="food-card" data-keywords="pizza pizza" data-type="food">
+              <img src="https://images.unsplash.com/photo-1548365328-2e9f86c3f62f?auto=format&fit=crop&w=800&q=80" alt="Pizza" />
+              <div class="food-details">
+                <h3>Pizza</h3>
+                <p>Stone-baked crust with melted cheese and herbs.</p>
+                <div class="food-meta">
+                  <span>NPR 650</span>
+                  <button class="btn btn-tertiary add-cart">Add to cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="food-card" data-keywords="pasta pasta" data-type="food">
+              <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=80" alt="Pasta" />
+              <div class="food-details">
+                <h3>Pasta</h3>
+                <p>Creamy pasta tossed with herbs, parmesan and fresh vegetables.</p>
+                <div class="food-meta">
+                  <span>NPR 480</span>
+                  <button class="btn btn-tertiary add-cart">Add to cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="food-card" data-keywords="momos momos" data-type="food">
+              <img src="https://images.unsplash.com/photo-1571145157120-18fe57bf41d6?auto=format&fit=crop&w=800&q=80" alt="Momos" />
+              <div class="food-details">
+                <h3>Momos</h3>
+                <p>Steamed dumplings served with spicy sesame chili sauce.</p>
+                <div class="food-meta">
+                  <span>NPR 220</span>
+                  <button class="btn btn-tertiary add-cart">Add to cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="food-card" data-keywords="cheesecake cheesecake dessert" data-type="food">
+              <img src="https://images.unsplash.com/photo-1532634896-26909d0d1f4b?auto=format&fit=crop&w=800&q=80" alt="Cheesecake" />
+              <div class="food-details">
+                <h3>Cheesecake</h3>
+                <p>Velvety cheese filling with a crisp butter crust.</p>
+                <div class="food-meta">
+                  <span>NPR 300</span>
+                  <button class="btn btn-tertiary add-cart">Add to cart</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section review-section">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">Testimonials</span>
+          <h2>What our guests say</h2>
+        </div>
+        <div class="review-grid">
+          <article class="review-card">
+            <p>"The espresso has the perfect balance — rich, smooth and unforgettable. The ambience feels like a hidden gem in Thamel."</p>
+            <div>
+              <strong>Roshni P.</strong>
+              <small>Kathmandu</small>
+            </div>
+          </article>
+          <article class="review-card">
+            <p>"June Cafe's pizza and latte made our lakeside afternoon magical. The staff were kind and the café design is beautifully calm."</p>
+            <div>
+              <strong>Arjun S.</strong>
+              <small>Pokhara</small>
+            </div>
+          </article>
+          <article class="review-card">
+            <p>"A premium experience with locally-inspired flavors. I loved the momo plate and the soft lighting created such a nice mood."</p>
+            <div>
+              <strong>Maya K.</strong>
+              <small>Chitwan</small>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section location-section" id="locations">
+      <div class="container section-header">
+        <div>
+          <span class="section-label">Locations</span>
+          <h2>Visit our cafes across Nepal</h2>
+        </div>
+      </div>
+      <div class="container location-grid">
+        <article class="location-card">
+          <h3>Kathmandu</h3>
+          <p>Thamel</p>
+        </article>
+        <article class="location-card">
+          <h3>Pokhara</h3>
+          <p>Lakeside</p>
+        </article>
+        <article class="location-card">
+          <h3>Chitwan</h3>
+          <p>Bharatpur</p>
+        </article>
+        <article class="location-card">
+          <h3>Lalitpur</h3>
+          <p>Jawalakhel</p>
+        </article>
+      </div>
+      <div class="container map-frame">
+        <iframe title="June Cafe Nepal locations" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14129.242001026224!2d85.2945075472334!3d27.71521635834014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190bd23371a5%3A0x0!2zMjfCsDQyJzUzLjUiTiA4NcKwMTcnNDYuNCJF!5e0!3m2!1sen!2snp!4v1716240000000" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container section-grid contact-grid">
+        <div>
+          <span class="section-label">Contact</span>
+          <h2>Reserve a table or send a message</h2>
+          <p>Have questions about our menu or locations? Reach out and we will reply with a warm welcome.</p>
+          <div class="contact-info">
+            <div><strong>Email</strong><span>hello@junecafe.nepal</span></div>
+            <div><strong>Phone</strong><span>+977 980-000-0000</span></div>
+          </div>
+        </div>
+        <form class="contact-form" action="/contact" method="POST">
+          <div class="form-grid">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Your email" required />
+            </label>
+            <label class="full-width">
+              Message
+              <textarea name="message" rows="5" placeholder="Tell us what you need" required></textarea>
+            </label>
+          </div>
+          <button class="btn btn-primary" type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section owner-section">
+      <div class="container owner-card">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" alt="Cafe owner" />
+        <div>
+          <span class="section-label">Founder</span>
+          <h2>Meet the owner</h2>
+          <p>June Cafe was founded with the belief that every cup of coffee should feel special. Our owner, Anya Dahal, blends hospitality with design to create a calming, premium cafe escape.</p>
+          <div class="owner-meta">
+            <span>12+ years of experience</span>
+            <span>National coffee awards</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="brand-title">June Cafe</p>
+        <p>Creating premium coffee culture for modern Nepal.</p>
+      </div>
+      <div class="social-links">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 June Cafe. Crafted for elegant moments.</p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

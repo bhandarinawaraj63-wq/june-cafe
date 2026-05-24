@@ -1,0 +1,708 @@
+﻿:root {
+  color-scheme: light;
+  --bg: #f7efe7;
+  --surface: #fff6ee;
+  --surface-strong: #fff2e7;
+  --text: #2c1f17;
+  --muted: #7c6656;
+  --accent: #a86f44;
+  --accent-strong: #7a4829;
+  --shadow: 0 24px 80px rgba(56, 38, 22, 0.14);
+  --border: rgba(132, 92, 61, 0.16);
+  --gradient: linear-gradient(135deg, rgba(221, 176, 130, 0.95), rgba(169, 111, 68, 0.95));
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+section,
+.menu-card,
+.food-card,
+.review-card,
+.location-card,
+.owner-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(14px);
+  background: rgba(247, 239, 231, 0.88);
+  border-bottom: 1px solid rgba(132, 92, 61, 0.12);
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.95rem;
+}
+
+.brand-mark {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  background: var(--accent-strong);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.brand-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.nav-menu a {
+  position: relative;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  transition: background 0.25s ease;
+}
+
+.nav-menu a:hover::after {
+  background: var(--accent);
+}
+
+.theme-switch,
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 1rem;
+  background: var(--surface-strong);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hero {
+  min-height: 88vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fff;
+  background-image: url('https://images.unsplash.com/photo-1510626176961-4b2ce7ee9a87?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(37, 25, 16, 0.3), rgba(16, 10, 7, 0.75));
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  max-width: 760px;
+  padding: 4rem 1rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffe9c6;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.7rem, 5vw, 4.4rem);
+  line-height: 1.03;
+  margin: 0;
+}
+
+.hero p {
+  color: rgba(255,255,255,0.92);
+  font-size: 1.05rem;
+  margin: 1.5rem auto 2rem;
+  max-width: 48rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.section-header.center {
+  justify-content: center;
+  text-align: center;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: var(--accent-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+}
+
+.section h2,
+.section h3 {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.section h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.95fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-card {
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--surface);
+}
+
+.about-card img {
+  height: 420px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.about-card-info {
+  padding: 2rem;
+}
+
+.about-card-info h3 {
+  margin: 1rem 0 0.75rem;
+  font-size: 1.9rem;
+}
+
+.feature-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.feature-list div {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  border-radius: 1.4rem;
+}
+
+.feature-list strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--accent-strong);
+}
+
+.menu-search-wrap {
+  max-width: 420px;
+}
+
+.menu-search {
+  width: 100%;
+  border: 1px solid rgba(132,92,61,0.16);
+  border-radius: 1.2rem;
+  padding: 1rem 1.2rem;
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+}
+
+.menu-grid,
+.food-grid,
+.review-grid,
+.location-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.menu-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.food-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.menu-card,
+.food-card,
+.review-card,
+.location-card,
+.owner-card {
+  background: var(--surface);
+  border-radius: 2rem;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.menu-card:hover,
+.food-card:hover,
+.review-card:hover,
+.location-card:hover,
+.owner-card:hover {
+  transform: translateY(-6px);
+}
+
+.menu-card img,
+.food-card img,
+.owner-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.menu-card-content,
+.food-details,
+.review-card,
+.owner-card > div {
+  padding: 1.5rem;
+}
+
+.menu-card-content h3,
+.food-details h3,
+.review-card strong {
+  margin: 0;
+}
+
+.menu-card-content p,
+.food-details p,
+.review-card p,
+.owner-card p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.menu-card-footer,
+.food-meta,
+.contact-info,
+.owner-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.2s ease, background 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  padding: 1rem 1.8rem;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 18px 35px rgba(168, 111, 68, 0.28);
+}
+
+.btn-secondary {
+  padding: 1rem 1.8rem;
+  background: rgba(255,255,255,0.16);
+  color: #fff;
+}
+
+.btn-tertiary {
+  padding: 0.85rem 1.25rem;
+  background: rgba(167, 111, 68, 0.1);
+  color: var(--accent-strong);
+}
+
+.food-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.food-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.review-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.review-card {
+  padding: 2rem;
+  min-height: 230px;
+}
+
+.review-card small {
+  color: var(--muted);
+}
+
+.location-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.location-card {
+  padding: 2rem;
+  text-align: center;
+}
+
+.location-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.map-frame {
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 420px;
+  border: 0;
+}
+
+.contact-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.95fr);
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.contact-info {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contact-info div {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid var(--border);
+  padding: 1.2rem 1.3rem;
+  border-radius: 1.4rem;
+}
+
+.contact-info strong {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.contact-form {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-grid label {
+  display: grid;
+  gap: 0.6rem;
+  font-weight: 500;
+}
+
+.form-grid input,
+.form-grid textarea {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(132, 92, 61, 0.16);
+  background: #fff;
+  color: var(--text);
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.owner-card {
+  grid-template-columns: 320px minmax(0, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+.owner-card img {
+  height: 420px;
+}
+
+.owner-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  color: var(--muted);
+}
+
+.footer {
+  background: #23180f;
+  color: rgba(255,255,255,0.84);
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.footer p,
+.footer a {
+  color: rgba(255,255,255,0.8);
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: rgba(255,255,255,0.62);
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(36, 22, 10, 0.96);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 30;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 960px) {
+  .section-grid,
+  .contact-grid,
+  .owner-card {
+    grid-template-columns: 1fr;
+  }
+
+  .header-grid {
+    grid-template-columns: auto auto;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 1rem;
+    flex-direction: column;
+    background: rgba(247,239,231,0.98);
+    border: 1px solid rgba(132,92,61,0.16);
+    border-radius: 1.5rem;
+    padding: 1rem;
+    gap: 1rem;
+    width: min(220px, 90vw);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-1rem);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  }
+
+  .nav-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .hero {
+    min-height: 72vh;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-content {
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+
+  .menu-grid,
+  .food-grid,
+  .review-grid,
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    padding: 0 0 0.85rem;
+  }
+}
+
+body.dark {
+  color-scheme: dark;
+  --bg: #120b07;
+  --surface: #1c1610;
+  --surface-strong: #241b14;
+  --text: #f6eae0;
+  --muted: #b89a84;
+  --accent: #d59667;
+  --accent-strong: #e9c6a7;
+  --border: rgba(217, 150, 103, 0.2);
+  --gradient: linear-gradient(135deg, rgba(204, 140, 96, 0.92), rgba(144, 86, 56, 0.92));
+}
+
+body.dark .topbar {
+  background: rgba(18, 11, 7, 0.88);
+}
+
+body.dark .nav-menu {
+  background: rgba(22, 15, 11, 0.96);
+}
+
+body.dark .hero-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+}
+
+body.dark .menu-search,
+body.dark .contact-form,
+body.dark .contact-info div,
+body.dark .feature-list div,
+body.dark .about-card,
+body.dark .menu-card,
+body.dark .food-card,
+body.dark .review-card,
+body.dark .location-card,
+body.dark .owner-card,
+body.dark .map-frame {
+  background: #1d1510;
+}
+
+body.dark .menu-search,
+body.dark .form-grid input,
+body.dark .form-grid textarea {
+  background: #231815;
+  border-color: rgba(217,150,103,0.18);
+  color: #f6eae0;
+}
+
+body.dark .footer {
+  background: #0b0603;
+}
+
+body.dark .btn-secondary {
+  background: rgba(255,255,255,0.08);
+}
+
+body.dark .btn-tertiary {
+  background: rgba(217,150,103,0.1);
+}
